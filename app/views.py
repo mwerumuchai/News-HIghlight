@@ -8,4 +8,15 @@ def index():
     Function that returns the index page and its data
     '''
 
-    return render_template('index.html')
+    title = 'Home - News Highlight'
+    return render_template('index.html', title = title)
+
+# Dynamic routing
+@app.route('/news/<int:news_id>')
+def news(news_id):
+    '''
+    Function that returns the news details and its data
+    '''
+
+    title = 'News Highlight'
+    return render_template('news.html', id = news_id, title = title)
