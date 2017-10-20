@@ -12,11 +12,10 @@ def index():
 	#getting general news
 	general_news = get_news_source('general')
 	entertainment_news = get_news_source('entertainment')
-	sports_news = get_news_source('sports')
 	technology_news =  get_news_source('technology')
 	business_news = get_news_source('business')
 	title = 'Home - News Highlight.'
-	return render_template('index.html',title = title,general = general_news,entertainment = entertainment_news,sports = sports_news,technology = technology_news,business = business_news)
+	return render_template('index.html',title = title,general = general_news,entertainment = entertainment_news,technology = technology_news,business = business_news)
 
 # Dynamic routing
 @app.route('/news/<int:news_id>')

@@ -16,7 +16,7 @@ def get_news_source(category):
 	"""
 	get_news_url = base_url.format(category,api_key)
 
-	with urllib.request.urlopen(get_news_url) as url:
+	with urllib.request.urlopen(get_news_url,data=None) as url:
 		get_news_data = url.read()
 		get_news_response = json.loads(get_news_data)
 

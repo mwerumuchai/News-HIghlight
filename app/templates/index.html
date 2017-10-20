@@ -17,8 +17,32 @@
     <!--general news section-->
     <h3>General News Category</h3>
     <ul>
-      {% for general_new in general %}
-      <li><strong>{{ general_new.name }} </strong> : {{ general_new.url }}</li>
+      {% for general_news in general %}
+      <li><strong>{{ general_news.name }} </strong> : {{ general_news.url }}</li>
+      {% endfor %}
+    </ul>
+
+    <!--Entertainment section-->
+    <h3>Entertainment Category</h3>
+    <ul>
+      {% for entertainment_news in entertainment %}
+      <li><strong>{{ entertainment_news.name }} </strong> : {{ entertainment_news.url }}</li>
+      {% endfor %}
+    </ul>
+
+    <!--Technology section-->
+    <h3>Technology News Category</h3>
+    <ul>
+      {% for technology_news in technology %}
+      <li><strong>{{ technology_news.name }} </strong> : {{ technology_news.url }}</li>
+      {% endfor %}
+    </ul>
+
+    <!--Business news section-->
+    <h3>Business News Category</h3>
+    <ul>
+      {% for business_news in business %}
+      <li><strong>{{ business_news.name }} </strong> : {{ business_news.url }}</li>
       {% endfor %}
     </ul>
 
