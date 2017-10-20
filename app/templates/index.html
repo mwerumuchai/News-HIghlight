@@ -1,28 +1,27 @@
 {% extends 'base.html' %} {% import 'macros.html' as macro %} {% block content %}
 
-<body>
-  <!--general news section-->
-  <h3>General News</h3>
-  <ul>
-    {{ macro.displayNewsList(general)}}
-  </ul>
+<!--general news section-->
+<h3>General News</h3>
+<ul>
+  {{ macro.displayNewsList(general)}}
+</ul>
 
-  <!--Entertainment section-->
-  <h3>Entertainment</h3>
-  <ul>
-    {{ macro.displayNewsList(entertainment)}}
-  </ul>
+<!--Entertainment section-->
+<h3>Entertainment</h3>
+<ul>
+  {{ macro.displayNewsList(entertainment)}}
+</ul>
 
-  <!--Technology section-->
-  <h3>Technology News</h3>
-  <ul>
-    {{ macro.displayNewsList(technology)}}
-  </ul>
+<!--Technology section-->
+<h3>Technology News</h3>
+<ul>
+  {{ macro.displayNewsList(technology)}}
+</ul>
 
-  <!--Business news section-->
-  <h3>Business News</h3>
-  <ul>
-    {{ macro.displayNewsList(business)}}
-  </ul>
+<!--Business news section-->
+<h3>Business News</h3>
+<ul>
+  {{ macro.displayNewsList(business)}}
+</ul>
 
-  {% endblock %}
+{% endblock %}
