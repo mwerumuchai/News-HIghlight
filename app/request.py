@@ -26,7 +26,7 @@ def get_news_source(category):
 			news_results_list = get_news_response['sources']
 			news_results = process_results(news_results_list)
 
-			return news_results
+	return news_results
 
 #processing results
 def process_results(news_list):
@@ -48,7 +48,7 @@ def process_results(news_list):
 		category = source.get('category')
 
 
-		news_object = News(id,name,description,url,category)
-		news_results.append(news_object)
+		news_source = News(id,name,description,url,category)
+		news_results.append(news_source)
 
 	return news_results
