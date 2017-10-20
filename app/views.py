@@ -2,18 +2,21 @@ from flask import render_template
 from app import app
 from .request import get_news_source
 
-#views
+#news
 @app.route('/')
 def index():
-    '''
-    Function that returns the index page and its data
-    '''
+	"""
+	new root page function return the page with all of its dat
+	"""
 
-    # getting top news highlights
-    latest_news = get_news_source("category")
-    print(latest_news)
-    title = 'Home - News Highlight'
-    return render_template('index.html', title = title, category = latest_news)
+	#getting general news
+	general_news = get_news_source('general')
+	entertainment_news = get_news_source('entertainment')
+	sports_news = get_news_source('sports')
+	technology_news =  get_news_source('technology')
+	business_news = get_news_source('business')
+	title = 'Home - News Highlight.'
+	return render_template('index.html',title = title,general = general_news,entertainment = entertainment_news,sports = sports_news,technology = technology_news,business = business_news)
 
 # Dynamic routing
 @app.route('/news/<int:news_id>')
