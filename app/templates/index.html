@@ -1,44 +1,28 @@
-{% import 'macros.html' as macro %}
+{% extends 'base.html' %} {% import 'macros.html' as macro %} {% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
+<body>
+  <!--general news section-->
+  <h3>General News</h3>
+  <ul>
+    {{ macro.displayNewsList(general)}}
+  </ul>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> {% if title%}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>Home - News Highlight</title>
-    {% endif %}
-  </head>
+  <!--Entertainment section-->
+  <h3>Entertainment</h3>
+  <ul>
+    {{ macro.displayNewsList(entertainment)}}
+  </ul>
 
-  <body>
-    <!--general news section-->
-    <h3>General News</h3>
-    <ul>
-      {{ macro.displayNewsList(general)}}
-    </ul>
+  <!--Technology section-->
+  <h3>Technology News</h3>
+  <ul>
+    {{ macro.displayNewsList(technology)}}
+  </ul>
 
-    <!--Entertainment section-->
-    <h3>Entertainment</h3>
-    <ul>
-      {{ macro.displayNewsList(entertainment)}}
-    </ul>
+  <!--Business news section-->
+  <h3>Business News</h3>
+  <ul>
+    {{ macro.displayNewsList(business)}}
+  </ul>
 
-    <!--Technology section-->
-    <h3>Technology News</h3>
-    <ul>
-      {{ macro.displayNewsList(technology)}}
-    </ul>
-
-    <!--Business news section-->
-    <h3>Business News</h3>
-    <ul>
-      {{ macro.displayNewsList(business)}}
-    </ul>
-
-
-  </body>
-
-</html>
+  {% endblock %}

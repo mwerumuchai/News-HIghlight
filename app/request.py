@@ -51,4 +51,4 @@ def process_results(news_list):
 		news_object = News(id,name,description,url,category)
 		news_results.append(news_object)
 
-		return news_results
+	return news_results
