@@ -14,10 +14,12 @@
   </head>
 
   <body>
-    <!-- category -->
-    <h3>News Outlets</h3>
+    <!--general news section-->
+    <h3>General News Category</h3>
     <ul>
-      {{ macro.displayNewsList(category) }}
+      {% for general_new in general %}
+      <li><strong>{{ general_new.name }} </strong> : {{ general_new.url }}</li>
+      {% endfor %}
     </ul>
 
 
