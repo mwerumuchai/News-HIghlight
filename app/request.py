@@ -1,10 +1,10 @@
 from app import app
 import urllib.request,json
-from .models import source, articles
+from .models import source, article
 
 Source = source.Source
 
-Article = articles.Article
+Article = article.Article
 
 
 #Getting api key
@@ -13,7 +13,7 @@ api_key = app.config['NEWS_API_KEY']
 
 #Getting the news base url
 base_url = app.config['NEWS_API_BASE_URL']
-articles_base_url = app.config['NEWS_ARTICLES_BASE_URL']
+# articles_base_url = app.config['NEWS_ARTICLES_BASE_URL']
 
 def get_news_source(category):
 	'''
@@ -45,12 +45,12 @@ def process_results(news_list):
 		new_results: A lists of news objects
 	"""
 	news_results = []
-	for source in news_list:
-		id = source.get('id')
-		name = source.get('name')
-		description = source.get('description')
-		url = source.get('url')
-		category = source.get('category')
+	for source_item in news_list:
+		id = source_item.get('id')
+		name = source_item.get('name')
+		description = source_item.get('description')
+		url = source_item.get('url')
+		category = source_item.get('category')
 
 
 		news_source = Source(id,name,description,url,category)
@@ -59,13 +59,13 @@ def process_results(news_list):
 	return news_results
 
 #Articles section
-def get_articles_source(source):
+def get_articles_source(id):
 	'''
 	Function that gets the json response to our url request
 	'''
-	get_articles_url = articles_base_url.format(source,api_key)
+	get_articles_url = 'https://newsapi.org/v1/articles?source={}&apiKey={}'.format(id,api_key)
 
-	with urllib.request.urlopen(get_articles_url,data=None) as url:
+	with urllib.request.urlopen(get_articles_url) as url:
 		get_articles_data = url.read()
 		get_articles_response = json.loads(get_articles_data)
 
@@ -77,7 +77,7 @@ def get_articles_source(source):
 
 	return articles_results
 
-def process_articles(articles_results):
+def process_articles(articles_list):
 	'''
 	Function  that processes the articles result and transform them to a list of Objects
 	Args:
@@ -85,9 +85,9 @@ def process_articles(articles_results):
 	Returns :
 	    articles_results: A list of articles objects
 	'''
-	articles_list = []
+	articles_results = []
 
-	for article_item in articles_results:
+	for article_item in articles_list:
 		author = article_item.get('author')
 		title = article_item.get('title')
 		description = article_item.get('description')
@@ -97,6 +97,6 @@ def process_articles(articles_results):
 
 		if date:
 			article_object = Article(author,title,description,url,image,date)
-			articles_list.append(article_object)
+			articles_results.append(article_object)
 
-	return articles_list
+	return articles_results
