@@ -11,7 +11,7 @@ class NewsTest(unittest.TestCase):
 		"""
 		set up method that will run before every test
 		"""
-		self.new_news_source = News("abc-news-au","ABC News (AU)","Australia's most trusted source of local, national and world news. Comprehensive, independent, in-depth analysis, the latest business, sport, weather and more.","http://www.abc.net.au/news,"general")
+		self.new_news_source = News("abc-news-au","ABC News (AU)","Australia's most trusted source of local, national and world news. Comprehensive, independent, in-depth analysis, the latest business, sport, weather and more.","http://www.abc.net.au/news","general")
 
 	def test_instance(self):
 		self.assertTrue(isinstance(self.new_news_source,News))

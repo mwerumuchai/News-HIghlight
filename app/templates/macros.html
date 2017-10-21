@@ -1,3 +1,22 @@
-{% macro displayNewsList(news_list) %} {% for news in news_list %}
-<li>{{ news.name }}</li>
+{% macro displayNewsList(news_list) %} {% for source in news_list %}
+<a href="/source/{{source.id}}">
+  <li>{{ source.name }}</li>
+</a>
+{% endfor %} {% endmacro %}
+
+<!-- articles -->
+{% macro displayArticleList(articles_list) %} {% for articles in articles_list %}
+
+<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+  <img src="{{ articles.image }}" alt="{{ articles.title }}" class="img-responsive">
+  <div class="col-md-9">
+    <a target="_blank" href="{{articles.url}}">
+      <h4>{{articles.title}}</h4>
+    </a>
+    <p><small>{{articles.date}}</small></p>
+    <p>{{articles.description | truncate(150)}}</p>
+  </div>
+
+</div>
+
 {% endfor %} {% endmacro %}

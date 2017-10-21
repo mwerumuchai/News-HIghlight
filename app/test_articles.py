@@ -13,11 +13,7 @@ class TestArticle(unittest.TestCase):
 		'''
 		Inbuilt function that runs before each test is executed
 		'''
-		self.new_article = Article("Sarah Jeong",
-		"How the judge on Oracle v. Google taught himself to code",
-		"Judge William Alsup taught himself to code for fun in the 1980s. Now he's the judge on Silicon Valley's biggest cases.",
-		"https://www.theverge.com/2017/10/19/16503076/oracle-vs-google-judge-william-alsup-interview-waymo-uber",
-		"https://cdn.vox-cdn.com/thumbor/yWidf1mAgXfNhxEWbkDc8p6SJjE=/0x146:2040x1214/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/9389895/sjeong_170510_2032_0003.jpg","2017-10-19T14:57:19Z")
+		self.new_article = Article("Sarah Jeong","How the judge on Oracle v. Google taught himself to code","Judge William Alsup taught himself to code for fun in the 1980s. Now he's the judge on Silicon Valley's biggest cases.","https://www.theverge.com/2017/10/19/16503076/oracle-vs-google-judge-william-alsup-interview-waymo-uber","https://cdn.vox-cdn.com/thumbor/yWidf1mAgXfNhxEWbkDc8p6SJjE=/0x146:2040x1214/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/9389895/sjeong_170510_2032_0003.jpg","2017-10-19T14:57:19Z")
 
 	def test_isArticleInstance(self):
 		'''
