@@ -1,7 +1,7 @@
 import unittest
-from models import articles
+from app.models import Articles
 
-Article = articles.Article
+# Article = articles.Article
 
 class TestArticle(unittest.TestCase):
 	'''
@@ -33,5 +33,5 @@ class TestArticle(unittest.TestCase):
 		self.assertEqual(self.new_article.image,"https://cdn.vox-cdn.com/thumbor/yWidf1mAgXfNhxEWbkDc8p6SJjE=/0x146:2040x1214/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/9389895/sjeong_170510_2032_0003.jpg")
 		self.assertEqual(self.new_article.date,"2017-10-19T14:57:19Z")
 
-if __name__ == '__main__':
-	unittest.main(verbosity=2)
+# if __name__ == '__main__':
+# 	unittest.main(verbosity=2)
