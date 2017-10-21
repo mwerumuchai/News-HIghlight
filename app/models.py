@@ -4,6 +4,9 @@ class Source:
     '''
 
     def __init__(self,id,name,description,url,category):
+        '''
+        __init__ method to define the properties of a Source object
+        '''
         self.id = id
         self.name = name
         self.description = description
@@ -17,9 +20,7 @@ class Article:
 	'''
 	def __init__(self,author,title,description,url,image,date):
 		'''
-		Function to initialize Article Objects. Defines the properties each Article object will hold.
-
-		Args:
+		__init__ method to define the properties of an Article object
 
 		'''
 		self.author = author

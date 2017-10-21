@@ -5,6 +5,12 @@ from flask_bootstrap import Bootstrap
 bootstrap = Bootstrap()
 
 def create_app(config_name):
+    '''
+    Function that takes configuration setting key as an argument
+
+    Args:
+        config_name : name of the configuration used    
+    '''
     app = Flask(__name__)
 
     #creating the app configurations

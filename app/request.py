@@ -4,13 +4,16 @@ from .models import Source, Article
 #Getting api key
 api_key = None
 
-#Getting the news base url
-# base_url = None
+
 
 def configure_request(app):
+	'''
+    Function that takes in the application instance and Replaces the values of the None variables
+    to application configuration objects
+    '''
 	global api_key,base_url
 	api_key = app.config['NEWS_API_KEY']
-	# base_url = app.config['']
+
 
 def get_news_source(category):
 	'''
