@@ -6,5 +6,11 @@
 
 <!-- articles -->
 {% macro displayArticleList(articles_list) %} {% for article in articles_list %}
-<li>{{ article.title }}</li>
+<ul>
+  <li><i><b>{{ article.author}}</i>{{ article.title }}</b>
+  </li>
+  {{ article.description }}
+</ul>
+
 {% endfor %} {% endmacro %}
+<!-- author,title,description,url,image,date -->

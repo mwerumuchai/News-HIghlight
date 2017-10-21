@@ -25,7 +25,6 @@ def source(id):
 	'''
 	# Getting articles according to source chosen
 	articles = get_articles_source(id)
-	source_id = id.upper()
-	title = f'{source_id} - Top Articles'
+	title = f'{id} - Top News'
 
-	return render_template('source.html',title = title,id = source_id, article = articles)
+	return render_template('source.html',title = title, article = articles)
