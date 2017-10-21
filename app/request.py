@@ -16,7 +16,7 @@ def get_news_source(category):
 	'''
 	function that gets the json reponse to our url request
 	'''
-	get_news_url = base_url.format(category,api_key)
+	get_news_url = 'https://newsapi.org/v1/sources'.format(category,api_key)
 
 	with urllib.request.urlopen(get_news_url) as url:
 		get_news_data = url.read()
