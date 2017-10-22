@@ -9,7 +9,7 @@
 <!-- articles -->
 {% macro displayArticleList(articles_list) %} {% for article in articles_list %}
 <div class="well well-sm col-xs-4 col-sm-4 col-md-4 col-lg-4 article-card">
-  <h4><a href="{{ article.url }}" class="article-title">{{ article.title }}}</a></h4>
+  <h4><a href="{{ article.url }}" class="article-title">{{ article.title }}</a></h4>
   <small class="publish-date">Date:{{article.date}}</small>
   <img src="{{ article.image }}" alt="{{ article.title }}" class="img-responsive article-image">
   <p>
